@@ -89,7 +89,7 @@ public class Enemy_AI : MonoBehaviour
         {
             // Set the destination to the current patrol point
             navAgent.SetDestination(patrolPoints[currentPatrolIndex].position);
-            Debug.Log("Patrolling to point " + currentPatrolIndex);
+            // Debug.Log("Patrolling to point " + currentPatrolIndex);
 
             // Move to the next patrol point for the next cycle
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
@@ -97,7 +97,7 @@ public class Enemy_AI : MonoBehaviour
         {
             // If agent has no path, set the destination
             navAgent.SetDestination(patrolPoints[currentPatrolIndex].position);
-            Debug.Log("Setting initial patrol destination to point " + currentPatrolIndex);
+            // Debug.Log("Setting initial patrol destination to point " + currentPatrolIndex);
         }
 
         // Check for player
@@ -131,7 +131,7 @@ public class Enemy_AI : MonoBehaviour
                 {
                     // Deal damage to the player
                     playerHealth.TakeDamage(attackDamage);
-                    Debug.Log("Attacking player! Dealt " + attackDamage + " damage.");
+                    // Debug.Log("Attacking player! Dealt " + attackDamage + " damage.");
 
                     // Set the cooldown for the next attack
                     nextAttackTime = Time.time + attackCooldown;

@@ -34,8 +34,9 @@ public class PlayerHealth : MonoBehaviour
         // Perform actions when the player dies
         Debug.Log("Player has died!");
 
-        // go back to start scene to restart the game
-        SceneManager.LoadScene("StartScene");
+        // Reload the current scene
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
 
         // Optionally, reset the player's health to full
         currentHealth = maxHealth;
